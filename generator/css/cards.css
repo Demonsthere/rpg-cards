@@ -132,7 +132,6 @@
     line-height: 7.5mm;
 }
 .card-subtitle {
-    height: 18px;
     margin-bottom: 0.0em;
     line-height: 18px;
     font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
@@ -215,6 +214,17 @@
 }
 .card-description-text {
     display: inline;
+}
+
+.card-spell-text {
+    display: inline;
+    font-size: .8em;
+}
+
+.card-spelllist-text {
+	display: inline;
+	font-size: inherit;
+	font-style: italic;
 }
 
 .card-ruler {

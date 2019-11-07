@@ -130,6 +130,16 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="card-spacing" class="col-sm-4 control-label">Spacing</label>
+                        <div class="col-sm-8">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked id="card-spacing" data-option="card_spacing" value="0"> Space cards for easier cutting
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="rounded-corners" class="col-sm-4 control-label">Corners</label>
                         <div class="col-sm-8">
                             <div class="checkbox">
@@ -463,18 +473,5 @@ if (card_has_tag(card, "creature")) {
             </div>
         </div>
     </div>
-
-    <!-- GOOGLE ANALYTICS (only for online preview, your local version won't have this) -->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-61016456-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </body>
 </html>

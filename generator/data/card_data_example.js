@@ -115,7 +115,7 @@ var card_data_example = [
             "bullet | magic missile, 2nd level (2 charges)",
             "bullet | magic missile, 3rd level (3 charges)",
             "fill | 3",
-            "boxes | 7 | 2.5"
+            "boxes | 7 | 2.5 | center"
         ],
         "tags": ["item", "wondrous-item", "magic"]
     },

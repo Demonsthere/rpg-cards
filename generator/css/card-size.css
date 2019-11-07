@@ -24,6 +24,15 @@
     padding: 0;
 }
 
+/* Lines to mark scissor cuts */
+.scissortable {
+    align-content: center;
+    border: 1px solid white;
+    position: relative;
+    padding: 1px;
+    border-spacing: 0;
+}
+
 /* A4 paper area */
 /* Chrome has problems with page sizes given in metric units. Make the paper area slightly smaller to work around this. */
 page[size="A4"] {
