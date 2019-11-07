@@ -1,7 +1,7 @@
 # rpg-cards
->**NOTE:** This repository is a fork. All custom changes are done on `kyma-master` branch.
-
 RPG spell/item/monster card generator
+
+>**NOTE:** This repository is a fork. All custom changes are done on `revised` branch.
 
 ## Preview
 Click [here](https://demonsthere.github.io/rpg-cards/generator/generate.html) for a live preview of this generator.
