@@ -17,10 +17,14 @@ Click [here](https://demonsthere.github.io/rpg-cards/generator/generate.html) fo
   - Check your page size, card size, and cards/page settings. If you ask the generator to place 4x4 poker-sized cards on a A4 paper, they won't fit and they will overflow the page.
 
 ## Local development
-This project has been dockerized, and can be run by using `docker-compose`. Currently the compose file has 2 containers defined:
-- web, for running the web service
-- dev, a "devbox" instance with node, that can be used to update icons live
-I plan on changing the model to multi-stage dockerfile, or load the icons from an external volume in the future. 
+This project has been dockerized - build:
+```
+docker build . -t rpg-cards
+```
+And then run:
+```
+docker run -p 8080:80 rpg-cards
+```
 
 ## License
 
