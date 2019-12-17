@@ -1,5 +1,5 @@
 FROM node:alpine as builder
-RUN apk --update add imagemagick
+RUN apk --update add imagemagick parallel
 COPY . /opt/app
 WORKDIR /opt/app
 RUN npm install

@@ -15,9 +15,7 @@ const imgDir = "./generator/img";
 const customIconDir = "./resources/custom-icons";
 const cssPath = "./generator/css/icons.css";
 const jsPath = "./generator/js/icons.js";
-//const processIconsCmd = "mogrify -background white -alpha shape *.png";
-const processIconsCmd = `mogrify -alpha copy -channel-fx "red=100%, blue=100%, green=100%" *.png`
-
+const processIconsCmd = `find -iname "*.png" -type f | parallel mogrify -alpha copy -channel-fx "red=100%, blue=100%, green=100%" {}`
 
 // ----------------------------------------------------------------------------
 // Download
