@@ -2,9 +2,9 @@ FROM node:alpine as builder
 RUN apk update &&\
 	apk add imagemagick &&\
 	apk add git
-RUN npm install mv graceful-fs fs-extra request path walk unzipper child_process ncp
 COPY . /opt/app
 WORKDIR /opt/app
+RUN npm install
 RUN node /opt/app/resources/tools/update-icons.js
 
 FROM nginx:alpine
