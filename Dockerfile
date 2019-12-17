@@ -1,7 +1,5 @@
 FROM node:alpine as builder
-RUN apk update &&\
-	apk add imagemagick &&\
-	apk add git
+RUN apk --update add imagemagick
 COPY . /opt/app
 WORKDIR /opt/app
 RUN npm install
@@ -13,4 +11,3 @@ COPY --from=builder /opt/app/resources /opt/app/resources/
 COPY --from=builder /opt/app/config/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
-
