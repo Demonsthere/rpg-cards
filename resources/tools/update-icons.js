@@ -57,7 +57,7 @@ function unzipAll(src, dest) {
 function processAll(path) {
     console.log("Processing (this will take a while)...");
     return new Promise((resolve, reject) => {
-        child_process.exec(processIconsCmd, {cwd: path}, (error, stdout, stderr) => {
+        child_process.exec(processIconsCmd, {cwd: path, maxBuffer: 1024*1024*5}, (error, stdout, stderr) => {
             if (error) {
                 reject(error);
             }
