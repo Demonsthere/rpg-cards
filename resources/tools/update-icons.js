@@ -15,7 +15,7 @@ const imgDir = "./generator/img";
 const customIconDir = "./resources/custom-icons";
 const cssPath = "./generator/css/icons.css";
 const jsPath = "./generator/js/icons.js";
-const processIconsCmd = `find -iname "*.png" -type f | parallel mogrify -alpha copy -channel-fx "red=100%, blue=100%, green=100%" {}`
+const processIconsCmd = 'find -iname *.png -type f | parallel mogrify -alpha copy -channel-fx red=100%, blue=100%, green=100% {}'
 
 // ----------------------------------------------------------------------------
 // Download
@@ -57,9 +57,9 @@ function unzipAll(src, dest) {
 function processAll(path) {
     console.log("Processing (this will take a while)...");
     return new Promise((resolve, reject) => {
-        child_process.exec(processIconsCmd, {cwd: path}, (error, stdout, stderr) => {
+        child_process.exec(processIconsCmd, {cwd: path, maxBuffer: 1024*1024*5, shell: true}, (error, stdout, stderr) => {
             if (error) {
-                reject(error);
+                reject(error)
             }
             else {
                 resolve();
@@ -168,4 +168,7 @@ fse.emptyDir(tempDir)
 .then(() => generateCSS(imgDir, cssPath))
 .then(() => generateJS(imgDir, jsPath))
 .then(() => console.log("Done."))
-.catch(err => console.log("Error", err));
+.catch(err => {
+    console.error(err.message);
+    process.exit(1);
+    });
