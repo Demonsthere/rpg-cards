@@ -15,7 +15,7 @@ const imgDir = "./generator/img";
 const customIconDir = "./resources/custom-icons";
 const cssPath = "./generator/css/icons.css";
 const jsPath = "./generator/js/icons.js";
-const processIconsCmd = 'find -iname *.png -type f | parallel mogrify -alpha copy -channel-fx red=100%, blue=100%, green=100% {}'
+const processIconsCmd = `find -iname "*.png" -type f | parallel "mogrify -alpha copy -channel-fx 'red=100%, blue=100%, green=100%' {}"`
 
 // ----------------------------------------------------------------------------
 // Download
@@ -171,4 +171,4 @@ fse.emptyDir(tempDir)
 .catch(err => {
     console.error(err.message);
     process.exit(1);
-    });
+});
