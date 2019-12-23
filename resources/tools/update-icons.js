@@ -59,7 +59,7 @@ function processAll(path) {
     return new Promise((resolve, reject) => {
         child_process.exec(processIconsCmd, {cwd: path, maxBuffer: 1024*1024*5, shell: true}, (error, stdout, stderr) => {
             if (error) {
-                reject(error)
+                reject(error);
             }
             else {
                 resolve();
