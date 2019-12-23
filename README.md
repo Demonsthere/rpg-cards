@@ -18,12 +18,20 @@ Click [here](https://demonsthere.github.io/rpg-cards/generator/generate.html) fo
 
 ## Local development
 This project has been dockerized - build:
-```
+
+```bash
 docker build . -t rpg-cards
 ```
+
 And then run:
-```
+
+```bash
 docker run -p 8080:80 rpg-cards
+```
+
+Or use the official image:
+```bash
+docker run -p 8080:80 demonsthere/rpg-cards:latest
 ```
 
 ## License
