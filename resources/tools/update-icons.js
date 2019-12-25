@@ -15,7 +15,7 @@ const imgDir = "./generator/img";
 const customIconDir = "./resources/custom-icons";
 const cssPath = "./generator/css/icons.css";
 const jsPath = "./generator/js/icons.js";
-const processIconsCmd = `find -iname "*.png" -type f | parallel "mogrify -alpha copy -channel-fx 'red=100%, blue=100%, green=100%' {}"`
+const processIconsCmd = `parallel -q mogrify -alpha copy -channel-fx "red=100%,blue=100%,green=100%" ::: $(ls *.png)`
 
 // ----------------------------------------------------------------------------
 // Download
@@ -57,7 +57,7 @@ function unzipAll(src, dest) {
 function processAll(path) {
     console.log("Processing (this will take a while)...");
     return new Promise((resolve, reject) => {
-        child_process.exec(processIconsCmd, {cwd: path, maxBuffer: 1024*1024*5, shell: true}, (error, stdout, stderr) => {
+        child_process.exec(processIconsCmd, {cwd: path}, (error, stdout, stderr) => {
             if (error) {
                 reject(error);
             }
