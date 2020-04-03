@@ -15,8 +15,7 @@ const imgDir = "./generator/img";
 const customIconDir = "./resources/custom-icons";
 const cssPath = "./generator/css/icons.css";
 const jsPath = "./generator/js/icons.js";
-const processIconsCmd = `parallel -q mogrify -alpha copy -channel-fx "red=100%,blue=100%,green=100%" ::: $(ls *.png)`
-
+const processIconsCmd = `parallel mogrify -alpha copy -channel-fx "red=100%,blue=100%,green=100%" {} ::: $(ls *.png)`
 // ----------------------------------------------------------------------------
 // Download
 // ----------------------------------------------------------------------------
